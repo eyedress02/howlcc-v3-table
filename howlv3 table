@@ -19,7 +19,14 @@ getgenv().Howl = {
                 ['Radius'] = 90,
                 ['Position'] = "Mouse" --// Mouse, Center
             }
-        }
+        },
+            ['EspVisuals'] = {
+                ['TracerEsp'] = string.upper,
+                ['TracerEspColor'] = Color3.fromRGB(255,255,255),
+                ['TracerKeyBind'] = Enum.KeyCode.H,
+                ['TracerEspThickness'] = 1,
+                ['TracerEspTransparency'] = 1
+            },
     },
     ['Combat'] = {
         ['Aimbot'] = {
