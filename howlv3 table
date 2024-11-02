@@ -1,0 +1,79 @@
+script_key="";
+getgenv().Howl = {
+    ['Visuals'] = {
+        ['Field Of Views'] = {
+            ['Aimbot'] = {
+                ['Use'] = false,
+                ['Show'] = false,
+                ['Filled'] = false,
+                ['Color'] = Color3.fromRGB(255, 255, 255),
+                ['Transparency'] = 1,
+                ['Radius'] = 50,
+                ['Position'] = "Mouse" --// Mouse, Center
+            },
+            ['Silent'] = {
+                ['Show'] = false,
+                ['Filled'] = false,
+                ['Color'] = Color3.fromRGB(255, 255, 255),
+                ['Transparency'] = 1,
+                ['Radius'] = 90,
+                ['Position'] = "Mouse" --// Mouse, Center
+            }
+        }
+    },
+    ['Combat'] = {
+        ['Aimbot'] = {
+            ['Settings'] = {
+                ['Key'] = 'C',
+                ['Enabled'] = true,
+                ['Predict'] = {
+                    ['Enabled'] = true,
+                    ['Velocity X'] = 0.1792,
+                    ['Velocity Y'] = 0.1792,
+                },
+                ['Smooth'] = {
+                    ['Enabled'] = true,
+                    ['Multiply'] = 0.04,
+                    ['Lerp'] = {
+                        ['Origin'] = 'Delta', --// Howl, Delta, Custom
+                        ['Customizable'] = {
+                            ['Alpha'] = 4,
+                            ['Control'] = 0.1
+                        }
+                    }
+                },
+                ['Bone'] = {
+                    ['Use'] = "Default",
+                    ['Select'] = "UpperTorso",
+                    ['Offsets'] = {
+                        ['Enabled'] = true,
+                        ['X'] = 0.14,
+                        ['Y'] = 0.01
+                    }
+                }
+            }
+        },
+        ['Silent'] = {
+            ['Settings'] = {
+                ['Mode'] = 'Target',
+                ['Enabled'] = true,
+                ['Chance'] = 100,
+                ['Predict'] = {
+                    ['Velocity X'] = 0.1291513,
+                    ['Velocity Y'] = 0.1295614,
+                },
+                ['Bone'] = {
+                    ['Use'] = "Default",
+                    ['Select'] = "UpperTorso"
+                }
+            }
+        },
+        ['Macro'] = {
+            ['Keybind'] = "x",
+            ['Speed'] = 2,
+            ['Type'] = "ThirdPerson" -- ThirdPerson, FirstPerson
+        },
+    }
+}
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/03f11f62e8fa04571a9c80135c38a358.lua"))()
