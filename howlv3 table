@@ -21,7 +21,7 @@ getgenv().Howl = {
             }
         },
             ['EspVisuals'] = {
-                ['TracerEsp'] = string.upper,
+                ['TracerEsp'] = true,
                 ['TracerEspColor'] = Color3.fromRGB(255,255,255),
                 ['TracerKeyBind'] = Enum.KeyCode.H,
                 ['TracerEspThickness'] = 1,
@@ -31,7 +31,7 @@ getgenv().Howl = {
     ['Combat'] = {
         ['Aimbot'] = {
             ['Settings'] = {
-                ['Key'] = 'C',
+                ['Key'] = 'E',
                 ['Enabled'] = true,
                 ['Predict'] = {
                     ['Enabled'] = true,
@@ -83,4 +83,4 @@ getgenv().Howl = {
     }
 }
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/03f11f62e8fa04571a9c80135c38a358.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/b48e3334fe38824599015cf0041e828d.lua"))()
