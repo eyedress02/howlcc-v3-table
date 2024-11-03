@@ -1,86 +1,75 @@
 script_key="";
 getgenv().Howl = {
-    ['Visuals'] = {
-        ['Field Of Views'] = {
-            ['Aimbot'] = {
-                ['Use'] = false,
-                ['Show'] = false,
-                ['Filled'] = false,
-                ['Color'] = Color3.fromRGB(255, 255, 255),
-                ['Transparency'] = 1,
-                ['Radius'] = 50,
-                ['Position'] = "Mouse" --// Mouse, Center
-            },
-            ['Silent'] = {
-                ['Show'] = false,
-                ['Filled'] = false,
-                ['Color'] = Color3.fromRGB(255, 255, 255),
-                ['Transparency'] = 1,
-                ['Radius'] = 90,
-                ['Position'] = "Mouse" --// Mouse, Center
-            }
-        },
-            ['EspVisuals'] = {
-                ['TracerEsp'] = true,
-                ['TracerEspColor'] = Color3.fromRGB(255,255,255),
-                ['TracerKeyBind'] = Enum.KeyCode.H,
-                ['TracerEspThickness'] = 1,
-                ['TracerEspTransparency'] = 1
-            },
-    },
-    ['Combat'] = {
-        ['Aimbot'] = {
-            ['Settings'] = {
-                ['Key'] = 'E',
-                ['Enabled'] = true,
-                ['Predict'] = {
-                    ['Enabled'] = true,
-                    ['Velocity X'] = 0.1792,
-                    ['Velocity Y'] = 0.1792,
-                },
-                ['Smooth'] = {
-                    ['Enabled'] = true,
-                    ['Multiply'] = 0.04,
-                    ['Lerp'] = {
-                        ['Origin'] = 'Delta', --// Howl, Delta, Custom
-                        ['Customizable'] = {
-                            ['Alpha'] = 4,
-                            ['Control'] = 0.1
-                        }
-                    }
-                },
-                ['Offsets'] = {
-                    ['Use'] = "Default",
-                    ['Select'] = "UpperTorso",
-                    ['Offsets'] = {
-                        ['Enabled'] = true,
-                        ['X'] = 0.14,
-                        ['Y'] = 0.01
-                    }
-                }
-            }
-        },
-        ['Silent'] = {
-            ['Settings'] = {
-                ['Mode'] = 'Target',
-                ['Enabled'] = true,
-                ['Chance'] = 100,
-                ['Predict'] = {
-                    ['Velocity X'] = 0.1291513,
-                    ['Velocity Y'] = 0.1295614,
-                },
-                ['Bone'] = {
-                    ['Use'] = "Default",
-                    ['Select'] = "UpperTorso"
-                }
-            }
-        },
-        ['Macro'] = {
-            ['Keybind'] = "x",
-            ['Speed'] = 2,
-            ['Type'] = "ThirdPerson" -- ThirdPerson, FirstPerson
-        },
-    }
+	["Options"] = {
+		Type = "Target", --TargetOnly
+		UpdateNotification = true,
+
+		["Keybind"] = {
+			Aimbot = "E",
+			Resolver = "C",
+			Macro = "X",
+		},
+	},
+	["Combat"] = {
+		["Aimbot"] = {
+			Prediction = 0.35,
+			Smoothness = 0.045,
+			Part = "Head",
+			PredictionAdjuster = true,
+
+			["MultipleParts"] = {
+				Enabled = false,
+				Parts = { "Head", "UpperTorso", "HumanoidRootPart", "LowerTorso" },
+			},
+
+			["Shake"] = {
+				Enabled = false,
+				Amount = 5,
+			},
+
+			["MouseTp"] = {
+				Smoothness = 0.0300,
+				Prediction = 0.134151,
+				Part = "LowerLeftLeg",
+			},
+		},
+		["Silent"] = {
+			Prediction = 0.143,
+			Part = "HumanoidRootPart",
+			PredictionAdjuster = false,
+
+			["MultipleParts"] = {
+				Enabled = false,
+				Parts = { "Head", "UpperTorso", "HumanoidRootPart", "LowerTorso" },
+			},
+
+			["Offsets"] = { -- If you don't want to use Offsets, just put their amount to 0
+				Jump = { Amount = 0 },
+				Fall = { Amount = 0 },
+			},
+		},
+	},
+	["PredictionAdjuster"] = {
+		VelocityThreshold = 250,
+	},
+	["Misc"] = {
+		["Checks"] = {
+			KnockedChecks = false,
+			TargetDeath = false,
+			PlayerDeath = true,
+			WallCheck = false,
+
+			["Resolver"] = {
+				Enabled = false,
+				Notification = true,
+			},
+		},
+		["Macro"] = {
+			Enabled = true,
+			Speed = 0.065,
+			Type = "Electron", -- "First", "Third", "Electron" (Doesn't use "Speed")
+		},
+	},
 }
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/b48e3334fe38824599015cf0041e828d.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/1d3a8a843aa5ce6d1ce7fed41e62a5d3.lua"))()
